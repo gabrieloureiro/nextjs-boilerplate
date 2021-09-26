@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
-/* eslint @typescript-eslint/no-empty-interface: "off" */
-
 import 'styled-components'
 
-import theme from './theme'
+import { lightTheme, colors } from './theme'
+
+const theme = { ...lightTheme, ...colors }
 
 export type Theme = typeof theme
 

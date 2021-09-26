@@ -1,17 +1,23 @@
-import React from 'react'
-import Head from 'next/head'
+import { useToast, ToastMessage } from "@/hooks/useToast"
+import React, {  useEffect } from "react"
 
-const Home: React.FC = () => {
+export const info: ToastMessage = {
+  title: 'Welcome to next-boilerplate',
+  description: "We use styled-components",
+  type: 'info'
+}
+
+const Home = () => {
+  const { addToast } = useToast()
+
+  useEffect(() => {
+    addToast(info)
+  }, [])
+
   return (
-    <>
-      <Head>
-        <title>Home</title>
-      </Head>
-      <main>
-        <h3>InputLabelRequired</h3>
-      </main>
-    </>
+    <h1>Next-boilerplate + Styled Components</h1>
   )
 }
+
 
 export default Home
